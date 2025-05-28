@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Premium custom cakes and desserts by Iram's Dream Bakers. Handcrafted with love for every special occasion.">
+  <title>Iram's Dream Bakers | Artisanal Cakes & Desserts</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #fff9fb;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #d6336c;
+      color: white;
+      padding: 25px 40px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      margin-bottom: 5px;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+      opacity: 0.9;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #fff9fb 0%, #ffe8ed 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1562440499-64c9a111f713?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      opacity: 0.03;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero img {
+      max-width: 150px;
+      margin-bottom: 25px;
+      filter: drop-shadow(0 5px 15px rgba(214, 51, 108, 0.3));
+    }
+
+    .hero h1 {
+      margin-bottom: 20px;
+      color: #d6336c;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      color: #555;
+    }
+
+    .cta-buttons {
+      margin: 30px 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .btn {
+      background: #d6336c;
+      color: white;
+      padding: 14px 30px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(214, 51, 108, 0.3);
+    }
+
+    .btn:hover {
+      background: #b02a53;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(214, 51, 108, 0.4);
+    }
+
+    .btn i {
+      margin-right: 8px;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #d6336c;
+      border: 2px solid #d6336c;
+    }
+
+    .btn-secondary:hover {
+      background: #f8f8f8;
+      color: #b02a53;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: #d6336c;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #d6336c;
+      margin: 15px auto 0;
+    }
+
+    .products {
+      padding: 80px 20px;
+      background-color: white;
+    }
+
+    .products-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      width: 280px;
+      overflow: hidden;
+      text-align: center;
+      transition: all 0.4s ease;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #d6336c;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      z-index: 2;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .product-info h3 {
+      margin: 10px 0;
+      color: #d6336c;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+    }
+
+    .product-info p {
+      color: #666;
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+    }
+
+    .price {
+      font-weight: bold;
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .order-btn {
+      background: #d6336c;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      display: inline-block;
+      box-shadow: 0 4px 10px rgba(214, 51, 108, 0.3);
+    }
+
+    .order-btn:hover {
+      background-color: #b02a53;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(214, 51, 108, 0.4);
+    }
+
+    .about {
+      padding: 80px 20px;
+      background: #fff9fb;
+      text-align: center;
+    }
+
+    .about-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .about p {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .testimonials {
+      padding: 80px 20px;
+      background: white;
+    }
+
+    .testimonials-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card {
+      background: #fff9fb;
+      border-radius: 15px;
+      padding: 30px;
+      width: 350px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: "" ";
+ font-family: Georgia, serif;
+      font-size: 60px;
+      color: rgba(214, 51, 108, 0.1);
+      position: absolute;
+      top: 10px;
+      left: 20px;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      color: #d6336c;
+    }
+
+    .faq {
+      padding: 80px 20px;
+      background: #fff9fb;
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+
+    .faq-question {
+      font-weight: 600;
+      color: #d6336c;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .faq-answer {
+      color: #666;
+    }
+
+    .contact {
+      padding: 80px 20px;
+      background: white;
+      text-align: center;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      max-width: 800px;
+      margin: 40px auto 0;
+    }
+
+    .contact-method {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 200px;
+    }
+
+    .contact-icon {
+      background: #d6336c;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .contact-method h3 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .contact-method a {
+      color: #d6336c;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .contact-method a:hover {
+      color: #b02a53;
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+    }
+
+    .social-links {
+      margin: 20px 0;
+    }
+
+    .social-links a {
+      color: white;
+      margin: 0 10px;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #d6336c;
+    }
+
+    .copyright {
+      opacity: 0.7;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .logo {
+        font-size: 1.8rem;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .product-card {
+        width: 100%;
+        max-width: 350px;
+      }
+
+      .contact-method {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 20px;
+      }
+
+      .hero {
+        padding: 60px 20px;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">Iram's Dream Bakers</div>
+    <div class="tagline">Artisanal Cakes & Sweet Creations</div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <img src="https://cdn-icons-png.flaticon.com/512/889/889441.png" alt="Cake Logo" />
+      <h1>Exquisite Custom Cakes Crafted with Passion</h1>
+      <p>Celebrate life's sweetest moments with our handcrafted, premium quality cakes made from the finest ingredients.
+      </p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/923021981863" class="btn"><i class="fab fa-whatsapp"></i> WhatsApp Order</a>
+        <a href="#products" class="btn btn-secondary"><i class="fas fa-birthday-cake"></i> View Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="products" id="products">
+    <h2 class="section-title">Our Signature Creations</h2>
+    <div class="products-container">
+      <div class="product-card">
+        <div class="product-badge">Bestseller</div>
+        <img src="https://images.unsplash.com/photo-1603052877185-2e62f1655f40" alt="Chocolate Cake">
+        <div class="product-info">
+          <h3>Chocolate dream Cake</h3>
+          <p>Rich, moist chocolate cake with layers of silky ganache</p>
+          <p class="price">Rs. 2200/ 1 Pound</p>
+          <a href="https://wa.me/923021981863?text=I%20want%20to%20order%20Chocolate%20Cake" class="order-btn">Order
+            Now</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-badge">Popular</div>
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" alt="Red Velvet">
+        <div class="product-info">
+          <h3>Classic Red Velvet</h3>
+          <p>Velvety smooth with cream cheese frosting</p>
+          <p class="price">Rs. 2200 / 1 Pound</p>
+          <a href="https://wa.me/923021981863?text=I%20want%20to%20order%20Red%20Velvet%20Cake" class="order-btn">Order
+            Now</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1542224566-1f10c1e48f9b" alt="Pineapple Cake">
+        <div class="product-info">
+          <h3>Tropical Pineapple</h3>
+          <p>Light sponge with fresh pineapple filling</p>
+          <p class="price">Rs. 2300 / 1 Pound</p>
+          <a href="" class="order-btn">Order
+            Now</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-badge">Custom</div>
+        <img src="https://images.unsplash.com/photo-1599785209707-28c8c1d30a84" alt="Theme Cake">
+        <div class="product-info">
+          <h3>Custom Design Cake</h3>
+          <p>Personalized cakes for your special occasions</p>
+          <p class="price">Rs. 1500 – 10000 / Pound</p>
+          <a href="https://wa.me/923021981863?text=I%20want%20to%20order%20a%20Custom%20Cake" class="order-btn">Order
+            Now</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e" alt="Cupcakes">
+        <div class="product-info">
+          <h3>Gourmet Cupcakes</h3>
+          <p>Assorted flavors, perfect for parties</p>
+          <p class="price">Rs. 200 per piece</p>
+          <a href="https://wa.me/923021981863?text=I%20want%20to%20order%20Cupcakes" class="order-btn">Order Now</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-badge">New</div>
+        <img src="https://images.unsplash.com/photo-1627834377411-8da5f4f09de8" alt="Dessert Box">
+        <div class="product-info">
+          <h3>Dessert Box</h3>
+          <p>Assorted mini desserts in an elegant box</p>
+          <p class="price">Rs. 2500 per box</p>
+          <a href="https://wa.me/923021981863?text=I%20want%20to%20order%20a%20Dessert%20Box" class="order-btn">Order
+            Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <h2 class="section-title">Our Story</h2>
+    <div class="about-content">
+      <p>Founded with a passion for baking and a dream to create unforgettable sweet experiences, Iram's Dream Bakers
+        has been crafting premium custom cakes since 2023.</p>
+      <p>Every cake we create is made with the finest ingredients, meticulous attention to detail, and a whole lot of
+        love. We believe in quality over quantity, which is why each order receives our undivided attention.</p>
+      <p>From intimate birthday celebrations to grand weddings, we've had the privilege of being part of thousands of
+        special moments across the city.</p>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2 class="section-title">Sweet Words</h2>
+    <div class="testimonials-container">
+      <div class="testimonial-card">
+        <p class="testimonial-text">"Iram's Dream Bakers made the most beautiful wedding cake for our special day! Not
+          only was it stunning, but it tasted absolutely divine. All our guests were raving about it!"</p>
+        <p class="testimonial-author">- Aisha & Farhan</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">"I've ordered birthday cakes from Iram's for the past three years. Each one has been
+          more delicious than the last. Their attention to detail is unmatched!"</p>
+        <p class="testimonial-author">- Sarah K.</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">"The custom cake I ordered for my daughter's graduation was perfect! It looked
+          exactly like her university logo and tasted even better than it looked. Worth every rupee!"</p>
+        <p class="testimonial-author">- Mr. Ahmed</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question">How far in advance should I place my order?</div>
+        <div class="faq-answer">We recommend placing orders at least 3-5 days in advance for standard cakes, and 1-2
+          weeks for custom designed cakes, especially during peak seasons.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Do you offer delivery?</div>
+        <div class="faq-answer">Yes! We offer delivery within the city for a nominal fee. Delivery charges vary based on
+          location and cake size.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can you accommodate dietary restrictions?</div>
+        <div class="faq-answer">We offer eggless and some sugar-free options. Please discuss your specific requirements
+          when placing your order.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What payment methods do you accept?</div>
+        <div class="faq-answer">We accept cash, bank transfer, JazzCash, and EasyPaisa.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-info">
+      <div class="contact-method">
+        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+        <h3>Call Us</h3>
+        <a href="tel:+923021981863">0302-1981863</a>
+      </div>
+      <div class="contact-method">
+        <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+        <h3>WhatsApp</h3>
+        <a href="https://wa.me/923021981863">Message Us</a>
+      </div>
+      <div class="contact-method">
+        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+        <h3>Email</h3>
+        <a href="mailto:irumfaisalirum0@gmail.com">email</a>
+      </div>
+      <div class="contact-method">
+        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <h3>Location</h3>
+        <a href="#">karachi</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.instagram.com/irumfaisalirum0" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://wa.me/923021981863" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <div class="copyright">
+      &copy; 2023 Iram's Dream Bakers. All Rights Reserved.<br>
+      Crafted with <i class="fas fa-heart" style="color: #d6336c;"></i> in karachi
+    </div>
+  </footer>
+  <footer>
+    <section class="developer">
+      <div class="developer-container">
+        <h2 class="section-title">About the Developer</h2>
+        <p>Hi! I'm <strong>Bilal</strong>, a 14-year-old frontend web developer and student from Pakistan. I designed
+          and developed this website for my family’s home-based bakery — <em>Iram's Dream Bakers</em>. I'm passionate
+          about creating beautiful and functional websites and continuously learning new coding skills.</p>
+        <p>If you'd like to connect or work together, feel free to reach out!</p>
+        <div class="social-links">
+          <a href="https://github.com/your-github-username" target="_blank" title="GitHub"><iclass="fab fa-github"></iclass=></a>
+          <a href="mailto:your-email@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://instagram.com/bilalfaisal_arain2025" target="_blank" title="Instagram"><i
+              class="fab fa-instagram"></i></a>
+          <a href="https://instagram.com/koala.685953" target="_blank" title="Instagram"><i
+              class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </section>
+
+
+  </footer>
+
+
+</body>
+
+</html>
